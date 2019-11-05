@@ -1,12 +1,13 @@
-let BREAK_REDUCE = false;
-
 function jumpingJimmy(tower, jumpHeight) {
+    // 1
+    let BREAK_REDUCE = false;
     return tower.reduce((acc, nextFloor) => {
         return BREAK_REDUCE ? acc : (() => {
             return nextFloor <= jumpHeight ? acc + nextFloor : (() => { BREAK_REDUCE = true; return acc })();
         })()
     }, 0);
 
+    // 2
     // try {
     //     return tower.reduce((acc, nextFloor) => {
     //         if (nextFloor <= jumpHeight) {
@@ -20,18 +21,18 @@ function jumpingJimmy(tower, jumpHeight) {
     //     return +acc;
     // }
 
+    // 3
     // let total = 0;
     // for (let floor of tower) {
-    //     if (floor <= jumpHeight) {
-    //         total += floor;
-    //     }
-    //     else {
+    //     if (floor > jumpHeight) {
     //         return total;
     //     }
+
+    //     total += floor;
     // }
+
+    // return total;
 }
 
-let tower = [5, 1, 8, 2, 4, 3, 1, 9, 8, 5, 1];
-let jumpHeight = 1;
-
-console.log(jumpingJimmy(tower, jumpHeight));
+// console.log(jumpingJimmy([5, 1, 8, 2, 4, 3, 1, 9, 8, 5, 1], 1));
+// console.log(jumpingJimmy([5, 1], 5));
