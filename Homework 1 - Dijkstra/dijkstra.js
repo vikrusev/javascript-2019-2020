@@ -5,7 +5,7 @@ const sourceFile = './input.txt';
 const targetFile = './output.txt';
 
 const newLine = '\r\n';
-const example = 0;
+const example = 0;  // SPECIFY THE EXAMPLE ENTERED IN THE input.txt
 
 let graph = new Graph();
 
